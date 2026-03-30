@@ -1,10 +1,20 @@
 #Api code
 import pandas as pd
+import os
 from app.model import load_model_scaler
 from app.schema import EmployeeStatus
 from fastapi import FastAPI
 
-app= FastAPI()
+app = FastAPI()
+
+print("Current working dir:", os.getcwd())
+print("Files:", os.listdir())
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+file_path = os.path.join(BASE_DIR, '..', 'data', 'HR_Dataset_Refresh.csv')
+
+df = pd.read_csv(file_path)
 model, scaler = load_model_scaler()
 
 @app.get("/")
