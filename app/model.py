@@ -5,7 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-df = pd.read_csv('fastapi/data/HR_Dataset_Refresh.csv')
+df = pd.read_csv('data/HR_Dataset_Refresh.csv')
 MODEL_PATH = '/Users/chandramani/Desktop/fastapi/model/logistic_empstatus.pkl'
 SCALER_PATH = '/Users/chandramani/Desktop/fastapi/model/logistic_scalar.pkl'
 def predict_logostic():
